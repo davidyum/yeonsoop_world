@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Migrating to CreateCategories (20120412114632)
 Migrating to CreatePhotos (20120412114739)
@@ -108,3 +109,33 @@ Processing by ProverbsController#show as HTML
   Rendered proverbs/show.html.erb within layouts/application (2.4ms)
   Rendered partials/_footer.html.erb (0.4ms)
 Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+=======
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 20:45:37 -0400
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 18ms
+
+ActiveRecord::StatementInvalid (Could not find table 'proverbs'):
+  app/models/proverb.rb:4:in `get_random_quote'
+  app/controllers/home_controller.rb:3:in `index'
+
+
+  Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 20:45:49 -0400
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'proverbs'):
+  app/models/proverb.rb:4:in `get_random_quote'
+  app/controllers/home_controller.rb:3:in `index'
+
+
+  Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.4ms)
+  Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.7ms)
+>>>>>>> recoverys
