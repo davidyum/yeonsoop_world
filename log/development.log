@@ -139,3 +139,19 @@ ActiveRecord::StatementInvalid (Could not find table 'proverbs'):
   Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
   Rendered /Users/davidyun/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.7ms)
 >>>>>>> recoverys
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 20:54:22 -0400
+Processing by HomeController#index as HTML
+  [1m[36mProverb Load (0.4ms)[0m  [1mSELECT "proverbs".* FROM "proverbs" ORDER BY Random() LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (8.5ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 85ms (Views: 61.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2012-04-24 20:54:26 -0400
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles" ORDER BY title LIMIT 10 OFFSET 0
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.2ms)
