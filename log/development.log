@@ -15,3 +15,96 @@ Migrating to CreateArticles (20120425000405)
   [1m[35m (0.0ms)[0m  PRAGMA index_list("categories")
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("photos")[0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("proverbs")
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 20:48:23 -0400
+Processing by HomeController#index as HTML
+  [1m[36mProverb Load (0.4ms)[0m  [1mSELECT "proverbs".* FROM "proverbs" ORDER BY Random() LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (8.5ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 92ms (Views: 66.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2012-04-24 20:48:29 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT "photos".* FROM "photos" WHERE (active = 't') ORDER BY caption LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE (active = 't')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  Rendered photos/index.html.erb within layouts/application (59.9ms)
+  Rendered partials/_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2012-04-24 20:48:30 -0400
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY name LIMIT 10 OFFSET 0[0m
+  Rendered categories/index.html.erb within layouts/application (7.8ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2012-04-24 20:48:31 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" WHERE (active = 't') ORDER BY caption LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE (active = 't')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  Rendered photos/index.html.erb within layouts/application (15.3ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/proverbs" for 127.0.0.1 at 2012-04-24 20:48:34 -0400
+Processing by ProverbsController#index as HTML
+  [1m[36mProverb Load (0.9ms)[0m  [1mSELECT "proverbs".* FROM "proverbs" WHERE (active = 't') ORDER BY translation LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "proverbs" WHERE (active = 't')
+  Rendered proverbs/index.html.erb within layouts/application (14.0ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2012-04-24 20:48:35 -0400
+Processing by HomeController#index as HTML
+  [1m[36mProverb Load (0.3ms)[0m  [1mSELECT "proverbs".* FROM "proverbs" ORDER BY Random() LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2012-04-24 20:48:43 -0400
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT "photos".* FROM "photos" WHERE (active = 't') ORDER BY caption LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE (active = 't')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  Rendered photos/index.html.erb within layouts/application (13.9ms)
+  Rendered partials/_footer.html.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/proverbs" for 127.0.0.1 at 2012-04-24 20:48:43 -0400
+Processing by ProverbsController#index as HTML
+  [1m[36mProverb Load (0.7ms)[0m  [1mSELECT "proverbs".* FROM "proverbs" WHERE (active = 't') ORDER BY translation LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "proverbs" WHERE (active = 't')
+  Rendered proverbs/index.html.erb within layouts/application (16.2ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/proverbs/43" for 127.0.0.1 at 2012-04-24 20:48:47 -0400
+Processing by ProverbsController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mProverb Load (0.2ms)[0m  [1mSELECT "proverbs".* FROM "proverbs" WHERE "proverbs"."id" = ? LIMIT 1[0m  [["id", "43"]]
+  Rendered proverbs/show.html.erb within layouts/application (2.4ms)
+  Rendered partials/_footer.html.erb (0.4ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms)
